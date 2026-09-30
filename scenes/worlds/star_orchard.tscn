@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/worlds/star_orchard_explorer.gd" id="1"]
+[node name="StarOrchard" type="Node3D"]
+script = ExtResource("1")
+world_root = "res://assets/worlds/star_orchard/"
+world_title = "星界果园"
+capture_root = "res://docs/star_orchard/"
+exploration_music_path = "res://assets/audio/music/starry_orchard.mp3"
+exploration_music_volume_db_offset = 6.0

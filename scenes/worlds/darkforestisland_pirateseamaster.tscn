@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/worlds/catalog_explorer.gd" id="1"]
+[node name="ImportedWorld" type="Node3D"]
+script = ExtResource("1")
+world_root = "res://assets/worlds/darkforestisland_pirateseamaster/"
+world_title = "黑森林 · 海盗海王"
+capture_root = "res://docs/darkforestisland_pirateseamaster/"
+exploration_music_path = "res://assets/audio/music/area_darkforest.mp3"

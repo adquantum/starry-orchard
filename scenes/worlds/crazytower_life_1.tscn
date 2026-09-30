@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/worlds/catalog_explorer.gd" id="1"]
+[node name="ImportedWorld" type="Node3D"]
+script = ExtResource("1")
+world_root = "res://assets/worlds/crazytower_life_1/"
+world_title = "疯狂之塔 · 生命 1 层"
+capture_root = "res://docs/crazytower_life_1/"

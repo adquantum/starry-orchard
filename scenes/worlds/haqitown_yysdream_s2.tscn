@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/worlds/catalog_explorer.gd" id="1"]
+[node name="ImportedWorld" type="Node3D"]
+script = ExtResource("1")
+world_root = "res://assets/worlds/haqitown_yysdream_s2/"
+world_title = "哈奇 · 梦境第 2 幕"
+capture_root = "res://docs/haqitown_yysdream_s2/"

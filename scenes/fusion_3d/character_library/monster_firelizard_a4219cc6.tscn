@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/fusion_3d/world_one_monster.gd" id="1"]
+
+[node name="monster_firelizard_a4219cc6" type="Node3D"]
+script = ExtResource("1")
+model_id = "monster_firelizard_a4219cc6"

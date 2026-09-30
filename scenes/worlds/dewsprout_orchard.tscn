@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/worlds/dewsprout_orchard_explorer.gd" id="1"]
+
+[node name="DewsproutOrchard" type="Node3D"]
+script = ExtResource("1")
+world_root = "res://assets/worlds/dewsprout_orchard/"
+world_title = "星界果园 · 露芽山坡"
+capture_root = "res://docs/dewsprout_orchard/"
+explorer_scale = 1.0
+exploration_music_path = "res://assets/audio/music/starry_orchard.mp3"

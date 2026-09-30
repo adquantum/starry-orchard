@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/worlds/catalog_explorer.gd" id="1"]
+[node name="ImportedWorld" type="Node3D"]
+script = ExtResource("1")
+world_root = "res://assets/worlds/frostroarisland_herostormeye/"
+world_title = "冰霜 · 风暴之眼（英雄）"
+capture_root = "res://docs/frostroarisland_herostormeye/"
+exploration_music_path = "res://assets/audio/music/area_frostroarisland.mp3"

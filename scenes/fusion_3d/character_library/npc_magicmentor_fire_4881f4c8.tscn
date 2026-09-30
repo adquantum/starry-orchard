@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/fusion_3d/world_one_monster.gd" id="1"]
+
+[node name="npc_magicmentor_fire_4881f4c8" type="Node3D"]
+script = ExtResource("1")
+model_id = "npc_magicmentor_fire_4881f4c8"

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/worlds/catalog_explorer.gd" id="1"]
+[node name="ImportedWorld" type="Node3D"]
+script = ExtResource("1")
+world_root = "res://assets/worlds/ancientegyptisland_sunkenrelic/"
+world_title = "古埃及 · 沉没遗迹"
+capture_root = "res://docs/ancientegyptisland_sunkenrelic/"

@@ -1,0 +1,201 @@
+# Starry Orchard / wiz101 - collaborative Godot 4.5+ source repository.
+# Keep runtime assets, scenes, resources, addons, tools and tests by default.
+# Keep source-side *.import and *.uid files; never ignore them globally.
+# This file does NOT delete local files or remove files already tracked by Git.
+
+# Local build/export products (keep export_presets.cfg and build scripts).
+/build/
+/builds/
+/dist/
+/releases/
+/output/
+/android/
+/*.pck
+/*.exe
+/*.apk
+/*.aab
+
+# Local archives, review exports and assistant working state.
+/backups/
+/.legacy_archive/
+/previews/
+/logs/
+/tmp/
+/.tmp
+/.agents/
+/.workbuddy/
+/.learnings/
+
+# Raw art is optional; retain conversion code, manifests and documentation.
+/art_source/**
+!/art_source/**/
+!/art_source/**/*.py
+!/art_source/**/*.ps1
+!/art_source/**/*.sh
+!/art_source/**/*.cmd
+!/art_source/**/*.bat
+!/art_source/**/*.json
+!/art_source/**/*.csv
+!/art_source/**/*.md
+!/art_source/**/requirements*.txt
+!/art_source/**/LICENSE*
+!/art_source/**/NOTICE*
+!/art_source/**/.gdignore
+/art_source/**/vendor/
+/art_source/skill-validation*/
+/art_source/backups/
+/art_source/world_one_backup/
+
+# Documentation remains; discard rendered screenshots and review media.
+/docs/**/*.png*
+/docs/**/*.jpg*
+/docs/**/*.jpeg*
+/docs/**/*.webp*
+/docs/**/*.gif*
+/docs/**/*.mp4
+/docs/**/*.webm
+/docs/**/*.wav
+/docs/**/*.mp3
+/docs/**/*.ogg
+/docs/**/*.zip
+/docs/**/*.7z
+
+# Reproducible test runs, not test source or hand-written fixtures.
+/tests/**/authority01_*/
+/tests/**/network-data-*/
+/tests/**/data-[0-9]*/
+/tests/**/game-[0-9]*/
+/tests/**/dual-[0-9]*/
+/tests/**/login-[0-9]*/
+/tests/**/slice-[0-9]*/
+/tests/**/ledger-*/
+/tests/**/final-pack-data*/
+/tests/**/check-appdata/
+/tests/**/event-appdata/
+/tests/**/tmp/
+/tests/**/artifacts/
+/tests/weekend/04/user_contract/
+/tests/weekend/04/user_walk/
+/tests/**/*.png*
+/tests/**/*.jpg*
+/tests/**/*.gif*
+/tests/**/*.mp4
+/tests/**/*.webm
+!/tests/**/fixtures/**
+!/tests/**/golden/**
+
+# Personal runtime data; the server creates its own data directory.
+/server/data/
+/.appdata/
+/.godot_user/
+/.godot_test_userdata/
+/server/**/accounts.sqlite*
+/server/**/progression.sqlite*
+
+# Local environment files and signing credentials; examples stay shareable.
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+export_credentials.cfg
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.key
+id_rsa
+id_ed25519
+/secrets/
+/credentials/
+
+# Regenerable caches, anywhere in the project. Keep lockfiles and manifests.
+.godot/
+.import/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+.cache/
+.coverage
+htmlcov/
+*.log
+*.log.*
+*.tmp
+*.bak
+*.bak.*
+*.backup
+*.blend1
+*.blend2
+*.swp
+*.swo
+*~
+
+# Machine-specific editor/OS files.
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Unreferenced root experiments; do not blanket-ignore addon DLLs or JSON.
+/sts2.dll
+/no_pvp_client_deck.json
+/no_pvp_deck.json
+/profile_absent.json
+/tools/spell_audit/preview.png*
+/tools/spell_audit/test-export.json
+
+# Runtime assets are intentionally NOT reduced by static reachability:
+# maps, monsters, wardrobe and cards also load assets dynamically.
+# Git LFS is recommended for the retained large binary asset collection.
+
+# Captured local Godot user profiles from multiplayer smoke tests.
+/tests/manual_dual_client/A/
+/tests/manual_dual_client/B/
+/tests/frost_production/net_client/
+/tests/frost_production/net_host/
+/tests/frost_production/presence_client/
+/tests/frost_production/presence_host/
+/tests/frost_production/user/
+/tests/**/Godot/app_userdata/
+/tests/**/accounts.sqlite*
+/tests/**/progression.sqlite*
+
+# Migration publication safeguards; source project untouched.
+/tools/audio_mixer/index.html
+/tools/spell_audit/payload.json
+/tools/spell_audit/spell_editor.html
+/migration/PRIVATE_*
+*.pem
+*.crt
+
+# Public code-only repository; game assets are handed over privately.
+/audio/
+/addons/
+/resources/
+/assets/**
+!/assets/**/
+!/assets/**/*.gdshader
+!/assets/**/*.gdshader.uid
+*.pck
+*.zip
+*.7z
+*.glb
+*.gltf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.wav
+*.mp3
+*.ogg
+*.res
+*.scn
+*.bin
+*.ttf
+*.ico

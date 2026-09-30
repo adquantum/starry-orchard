@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Arcane Academy Duel"
+run/main_scene="res://scripts/updater/startup_gate.tscn"
+run/main_loop_type="ClientUpdateTree"
+boot_splash/show_image=false
+boot_splash/bg_color=Color(0.027, 0.043, 0.067, 1)
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://assets/branding/game_icon.png"
+config/windows_native_icon="res://assets/branding/game_icon.ico"
+
+[autoload]
+
+GraphicsSettings="*res://autoloads/graphics_settings.gd"
+
+Accounts="*res://scripts/fusion_3d/account_client.gd"
+
+Wardrobe="*res://scripts/fusion_3d/wardrobe_store.gd"
+
+Locale="*res://autoloads/localization.gd"
+WorldTransitionManager="*res://autoloads/world_transition_manager_v1.gd"
+DemoSession="*res://autoloads/demo_session_v2.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=0
+
+[gdscript]
+
+warnings/enable_all_warnings=true
+warnings/untyped_declaration=1
+warnings/unsafe_property_access=1
+warnings/unsafe_method_access=1
+
+[rendering]
+
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+
+

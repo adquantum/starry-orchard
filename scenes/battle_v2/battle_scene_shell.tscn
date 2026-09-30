@@ -1,0 +1,286 @@
+[gd_scene load_steps=10 format=3 uid="uid://btdhmv4f2006b"]
+
+[ext_resource type="Script" uid="uid://dlhw217j3x7ib" path="res://scenes/battle_v2/battle_scene_shell.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://c8kcxn0l3aepl" path="res://scenes/battle_v2/presentation/battle_circle_shell_v2.gd" id="2_circle"]
+[ext_resource type="Script" uid="uid://bx86osrrxa4qc" path="res://scenes/battle_v2/ui/battle_hand_view_v2.gd" id="3_hand"]
+[ext_resource type="Script" uid="uid://bifkoyx5b0fqs" path="res://scenes/battle_v2/presentation/target_arrow_renderer_v2.gd" id="4_arrow"]
+[ext_resource type="Script" uid="uid://d1aqi7a3v6b05" path="res://scenes/battle_v2/presentation/spell_presentation_director_v2.gd" id="5_presentation"]
+[ext_resource type="Script" uid="uid://csrmmh3n7n8sr" path="res://scenes/battle_v2/presentation/resolution_caster_pointer_v2.gd" id="6_pointer"]
+[ext_resource type="Script" uid="uid://7c8sth0ivhfv" path="res://scenes/battle_v2/ui/deck_builder_panel_v2.gd" id="7_deck_builder"]
+[ext_resource type="Script" uid="uid://nbc8hdha7bqb" path="res://scenes/battle_v2/presentation/battle_layout_debug_overlay_v2.gd" id="8_layout_debug"]
+
+[sub_resource type="StyleBoxFlat" id="StyleTop"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.025, 0.055, 0.1, 0.94)
+border_width_bottom = 2
+border_color = Color(0.57, 0.43, 0.2, 1)
+
+[node name="BattleSceneShellV2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+volume_db = -8.0
+
+[node name="BattleCircle" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_circle")
+
+[node name="CasterPointer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_pointer")
+
+[node name="UnitLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HUDLayer" type="Control" parent="."]
+z_index = 240
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PresentationLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_presentation")
+
+[node name="TargetArrow" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_arrow")
+
+[node name="LayoutDebugOverlay" type="Control" parent="."]
+z_index = 850
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_layout_debug")
+
+[node name="TopBar" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleTop")
+
+[node name="Bar" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+
+[node name="Phase" type="Label" parent="TopBar/Bar"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+text = "ROUND 1 · PLANNING"
+vertical_alignment = 1
+
+[node name="Prompt" type="Label" parent="TopBar/Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Choose a spell"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Event" type="Label" parent="TopBar/Bar"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Speed" type="OptionButton" parent="TopBar/Bar"]
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+tooltip_text = "Spell presentation speed"
+
+[node name="Pass" type="Button" parent="TopBar/Bar"]
+visible = false
+layout_mode = 2
+text = "PASS"
+
+[node name="Cancel" type="Button" parent="TopBar/Bar"]
+layout_mode = 2
+text = "CANCEL"
+
+[node name="Debug" type="CheckButton" parent="TopBar/Bar"]
+layout_mode = 2
+text = "LAYOUT DEBUG"
+
+[node name="CleanView" type="Button" parent="TopBar/Bar"]
+layout_mode = 2
+tooltip_text = "Hide developer HUD; press F10 to restore"
+text = "CLEAN VIEW"
+
+[node name="ActionStrip" type="Control" parent="."]
+z_index = 250
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 676.0
+offset_right = 254.0
+offset_bottom = 886.0
+
+[node name="FrameArt" type="TextureRect" parent="ActionStrip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Row" type="VBoxContainer" parent="ActionStrip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 28.0
+offset_right = -36.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Pass" type="Button" parent="ActionStrip/Row"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_vertical = 3
+text = "PASS"
+expand_icon = true
+
+[node name="Draw" type="Button" parent="ActionStrip/Row"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_vertical = 3
+text = "DRAW"
+expand_icon = true
+
+[node name="DeckDock" type="Control" parent="."]
+z_index = 250
+anchors_preset = 0
+offset_left = 1346.0
+offset_top = 676.0
+offset_right = 1586.0
+offset_bottom = 886.0
+
+[node name="FrameArt" type="TextureRect" parent="DeckDock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Deck" type="Button" parent="DeckDock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 38.0
+offset_right = -20.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DECK
+EDIT"
+
+[node name="HandPanel" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 280.0
+offset_top = 678.0
+offset_right = 1320.0
+offset_bottom = 900.0
+mouse_filter = 1
+
+[node name="FrameArt" type="TextureRect" parent="HandPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 75.0
+offset_right = 4.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hand" type="Control" parent="HandPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 54.0
+offset_right = 2.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_hand")
+
+[node name="DeckBuilder" type="PanelContainer" parent="."]
+z_index = 900
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -300.0
+offset_right = 380.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_deck_builder")
